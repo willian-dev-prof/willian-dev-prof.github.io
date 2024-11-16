@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Willian Alves</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script src="handler.js" defer></script>
+</head>
+<body class="body-css" onload="UpdateLanguage('pt')">
+    <div class="transparent-div">
+        <ul class="menu-list">
+            <li class="menu-item" onclick="showDiv(1)"><i class="fas fa-home"></i> <a id="home">Início</a>
+                <div id="menu-item-1" style="position: relative;
+                    bottom: -2px;
+                    left: 0px;
+                    right: 0px;
+                    height: 2px;
+                    display: flex;
+                    background: linear-gradient(90deg, rgb(26, 202, 234), rgb(255, 0, 127));">
+                </div>
+            </li>
+            <li class="menu-item" onclick="showDiv(2)"><i class="fas fa-folder-open"></i> <a id="project">Projetos</a> 
+                <div id="menu-item-2" style="position: relative;
+                    bottom: -2px;
+                    left: 0px;
+                    right: 0px;
+                    height: 2px;
+                    display: none;
+                    background: linear-gradient(90deg, rgb(26, 202, 234), rgb(255, 0, 127));">
+                </div>
+            </li>
+            <li class="menu-item" onclick="showDiv(3)"><i class="fas fa-user" ></i> <a id="about">Sobre</a> 
+                <div id="menu-item-3" style="position: relative;
+                    bottom: -2px;
+                    left: 0px;
+                    right: 0px;
+                    height: 2px;
+                    display: none;
+                    background: linear-gradient(90deg, rgb(26, 202, 234), rgb(255, 0, 127));">
+                </div>
+            </li>
+            <select id="select-idioma" class="select-idioma">
+                <option value="pt">Português</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+            </select>
+        </ul>
+    </div>
+    <div class="presentation-div" id="presentation">
+        <div class="animation">
+            <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script> 
+
+            <dotlottie-player src="https://lottie.host/f2a2cf10-3477-4618-8854-85c17425290f/nPzxh6ukPn.json" background="transparent" speed="1" style="width: 28vw; height: 38vh;" loop autoplay></dotlottie-player>
+        </div>
+        <div class="presentation-data">Willian Alves</div>
+        <div class="presentation-frase" id="description"></div>
+        <div class="presentation-ability" id="skill"></div>
+        <div class="presentation-skills">
+            <span class="skills">Phyton</span>
+            <span class="skills">Java</span>
+            <span class="skills">Golang</span>
+            <span class="skills">Sql/Nosql</span>
+            <span class="skills">AWS Cloud</span>
+            <span class="skills">IOT Core</span>
+            <span class="skills">Lambdas</span>
+            <span class="skills">Cloudformation / Terraform</span>
+        </div>
+        <div class="presentation-connections" id="connect"></div>
+        <div class="presentation-midias">
+            <a href="https://github.com/willian-dev-prof" target="_blank" class="midias">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/wil_alves_silva/profilecard/?igsh=MWdqdDRjd2JxeTVqbA==" target="_blank" class="midias">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/willian-alves-2ab3a6119" target="_blank" class="midias">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+    <div class="presentation-projects" id="projects">
+        <div class="project-mv" id="mv">
+            <div class="project-title">ERP-MV</div>
+            <div class="project-about">
+                <a id="erp_mv"></a>
+            </div>
+        </div>
+
+        <div class="project-samsung" id="samsung">
+            <div class="project-title">RCMS-SAMSUNG</div>
+            <div class="project-about">
+                <a id="rcms_samsung"></a>          
+            </div>
+        </div>
+
+        <div class="project-v3" id="v3">
+            <div class="project-title">V3-CLOUD</div>
+            <div class="project-about">
+                <a id="v3_cloud"></a>  
+            </div>
+        </div>
+        <div class="project-sulwork" id="sulwork">
+            <div class="project-title">ERP-SULWORK</div>
+            <div class="project-about">
+                <a id="erp_sulwork"></a>  
+            </div>
+        </div>
+        <div class="project-stoneridge" id="stoneridge">
+            <div class="project-title">DS-STONERIDGE</div>
+            <div class="project-about" >
+                <a id="ds_stoneridge"></a>
+            </div>
+        </div>
+        <div class="next-page" id="ButtonNext">
+            <li onclick="next(1)" class="next-button"><i class="fas fa-arrow-right"></i></li>
+        </div>
+        <div class="previos-page" id="ButtonPrevios">
+            <li onclick="next(0)" class="next-button"><i class="fas fa-arrow-left"></i></li>
+        </div>
+    </div>
+
+    <div class="presentation-about" id="presentation_about">
+
+    </div>
+</body>
+</html>
