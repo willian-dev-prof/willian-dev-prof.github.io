@@ -5,7 +5,7 @@ function showDiv(dvNumber) {
 
     var item1 = document.getElementById('menu-item-1');
     var item2 = document.getElementById('menu-item-2');
-    var item3 = document.getElementById('menu-item-3');
+    /*var item3 = document.getElementById('menu-item-3');*/
 
     var v3 = document.getElementById('v3');
     var samsung = document.getElementById('samsung');
@@ -16,8 +16,6 @@ function showDiv(dvNumber) {
     var ButtonPrevios = document.getElementById('ButtonPrevios');
 
     
-    
-    
     if (dvNumber == 1) {
         presentation.style.display = 'block';
         projects.style.display = 'none';
@@ -25,7 +23,7 @@ function showDiv(dvNumber) {
         
         item1.style.display = 'block';
         item2.style.display = 'none';
-        item3.style.display = 'none';
+        /*item3.style.display = 'none';*/
     }
     
     if (dvNumber == 2) {
@@ -35,7 +33,7 @@ function showDiv(dvNumber) {
 
         item1.style.display = 'none';
         item2.style.display = 'block';
-        item3.style.display = 'none';
+         /*item3.style.display = 'none';*/
 
         v3.style.display = 'block';
         samsung.style.display = 'block';
@@ -53,7 +51,7 @@ function showDiv(dvNumber) {
 
         item1.style.display = 'none';
         item2.style.display = 'none';
-        item3.style.display = 'block';
+        /*item3.style.display = 'block';*/
     }
 }
 
