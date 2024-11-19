@@ -250,7 +250,7 @@ const textos = {
 function UpdateLanguage(idioma) {
     document.getElementById("home").textContent = textos[idioma].home;
     document.getElementById("project").textContent = textos[idioma].project;
-    document.getElementById("about").textContent = textos[idioma].about;
+    /*document.getElementById("about").textContent = textos[idioma].about;*/
     document.getElementById("description").textContent = textos[idioma].description;
     document.getElementById("skill").textContent = textos[idioma].skill;
     document.getElementById("connect").textContent = textos[idioma].connect;
