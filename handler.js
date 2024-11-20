@@ -1,88 +1,36 @@
 function showDiv(dvNumber) {
     var presentation = document.getElementById('presentation');
     var projects = document.getElementById('projects');
-    var presentation_about = document.getElementById('presentation_about');
 
     var item1 = document.getElementById('menu-item-1');
     var item2 = document.getElementById('menu-item-2');
-    /*var item3 = document.getElementById('menu-item-3');*/
 
     var v3 = document.getElementById('v3');
     var samsung = document.getElementById('samsung');
     var mv = document.getElementById('mv');
     var sulwork = document.getElementById('sulwork');
     var stoneridge = document.getElementById('stoneridge');
-    var ButtonNext = document.getElementById('ButtonNext');
-    var ButtonPrevios = document.getElementById('ButtonPrevios');
-
     
     if (dvNumber == 1) {
         presentation.style.display = 'block';
         projects.style.display = 'none';
-        presentation_about.style.display = 'none';
         
         item1.style.display = 'block';
         item2.style.display = 'none';
-        /*item3.style.display = 'none';*/
     }
     
     if (dvNumber == 2) {
         presentation.style.display = 'none';
         projects.style.display = 'block';
-        presentation_about.style.display = 'none';
 
         item1.style.display = 'none';
         item2.style.display = 'block';
-         /*item3.style.display = 'none';*/
 
         v3.style.display = 'block';
         samsung.style.display = 'block';
-        mv.style.display = 'none';
-        sulwork.style.display = 'none';
-        stoneridge.style.display = 'block';
-        ButtonNext.style.display = 'block';
-        ButtonPrevios.style.display = 'none';
-    }
-
-    if (dvNumber == 3) {
-        presentation.style.display = 'none';
-        projects.style.display = 'none';
-        presentation_about.style.display = 'block';
-
-        item1.style.display = 'none';
-        item2.style.display = 'none';
-        /*item3.style.display = 'block';*/
-    }
-}
-
-function next(number) {
-    var v3 = document.getElementById('v3');
-    var samsung = document.getElementById('samsung');
-    var mv = document.getElementById('mv');
-    var sulwork = document.getElementById('sulwork');
-    var stoneridge = document.getElementById('stoneridge');
-
-    var ButtonNext = document.getElementById('ButtonNext');
-    var ButtonPrevios = document.getElementById('ButtonPrevios');
-
-    if (number == 1) {
-        samsung.style.display = 'none';
-        v3.style.display = 'none';
-        stoneridge.style.display = 'none';
-
         mv.style.display = 'block';
         sulwork.style.display = 'block';
-        ButtonNext.style.display = 'none';
-        ButtonPrevios.style.display = 'block';
-    }else{
-        samsung.style.display = 'block';
-        v3.style.display = 'block';
         stoneridge.style.display = 'block';
-
-        mv.style.display = 'none';
-        sulwork.style.display = 'none';
-        ButtonNext.style.display = 'block';
-        ButtonPrevios.style.display = 'none';
     }
 }
 
@@ -248,7 +196,6 @@ const textos = {
 function UpdateLanguage(idioma) {
     document.getElementById("home").textContent = textos[idioma].home;
     document.getElementById("project").textContent = textos[idioma].project;
-    /*document.getElementById("about").textContent = textos[idioma].about;*/
     document.getElementById("description").textContent = textos[idioma].description;
     document.getElementById("skill").textContent = textos[idioma].skill;
     document.getElementById("connect").textContent = textos[idioma].connect;
