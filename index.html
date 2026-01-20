@@ -10,7 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <script src="handler.js" defer></script>
 </head>
-<body class="body-css" onload="UpdateLanguage('pt')">
+<body class="body-css" onload="UpdateLanguage(getBrowserLang())">
     <div class="transparent-div">
         <ul class="menu-list">
             <li class="menu-item" onclick="showDiv(1)"><i class="fas fa-home"></i> <a id="home">Início</a>
@@ -63,9 +63,6 @@
         <div class="presentation-midias">
             <a href="https://github.com/willian-dev-prof" target="_blank" class="midias">
                 <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.instagram.com/wil_alves_silva/profilecard/?igsh=MWdqdDRjd2JxeTVqbA==" target="_blank" class="midias">
-                <i class="fab fa-instagram"></i>
             </a>
             <a href="https://www.linkedin.com/in/willian-alves-2ab3a6119" target="_blank" class="midias">
                 <i class="fab fa-linkedin"></i>

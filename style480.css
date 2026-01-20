@@ -71,7 +71,7 @@
     }
 
     .presentation-div .presentation-frase {
-        width: 80%;
+        width: 50%;
         height: 20%;
         display: flex;
         position: absolute;
@@ -84,8 +84,9 @@
         text-shadow: rgba(0, 0, 0, 0.5) 0px 4px 30px;
         justify-content: center;
         align-items: center;
-        left: 10%;
+        left: 25%;
         text-align: center;
+
     }
 
     .presentation-div .presentation-ability {

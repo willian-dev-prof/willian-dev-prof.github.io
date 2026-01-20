@@ -79,12 +79,13 @@ html, body {
 }
 
 .presentation-div .presentation-frase{
-    width: 100%;
+    width: 50%;
     height: 20%;
     display: flex;
     position: absolute;
     color: white;
     top: 47%;
+    left: 25%;
     font-size: 1.25rem;
     font-family: "Poppins", "Roboto", sans-serif;
     line-height: 1.2;
@@ -93,6 +94,7 @@ html, body {
     text-shadow: rgba(0, 0, 0, 0.5) 0px 4px 30px;
     justify-content: center;
     align-items: center; 
+    text-align: center;
 }
 
 .presentation-div .presentation-ability{

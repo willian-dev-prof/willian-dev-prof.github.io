@@ -39,7 +39,10 @@ const textos = {
         home: "Início",
         project: "Projetos",
         about: "Sobre",
-        description: "Arquiteto de Software apaixonado por construir experiências digitais impactantes.",
+        description: `Líder Técnico de Cloud e Arquiteto de Soluções em Nuvem especializado em AWS, 
+                      com paixão por construir sistemas altamente escaláveis e de fácil manutenção. 
+                      Mais de 9 anos de experiência em soluções em nuvem, incluindo colaboração 
+                      com equipes internacionais para entregar soluções robustas.`,
         skill: "Habilidades Técnicas",
         connect: "Vamos nos Conectar?",
         ds_stoneridge: `Atualmente, estou trabalhando em um novo projeto voltado para a construção da infraestrutura na AWS, possibilitando a comunicação com milhares de equipamentos, 
@@ -96,7 +99,9 @@ const textos = {
         home: "Home",
         project: "Projects",
         about: "About",
-        description: "Software Architect passionate about building impactful digital experiences.",
+        description: `Tech Lead Cloud and Cloud Solution Architect specializing in AWS with a passion for building
+                      highly scalable and maintainable systems. Over 9 years of experience in cloud solutions, including
+                      collaboration with international teams to deliver robust solutions.`,
         skill: "Technical Skill",
         connect: "Let's connect?",
         ds_stoneridge: `Currently, I am working on a new project focused on building infrastructure on AWS, enabling communication with thousands of devices, 
@@ -143,7 +148,10 @@ const textos = {
         home: "Inicio",
         project: "Proyectos",
         about: "Quién soy",
-        description: "Arquitecto de Software apasionado por crear experiencias digitales impactantes.",
+        description: `Tech Lead de Cloud y Arquitecto de Soluciones en la Nube especializado en AWS, 
+                      con pasión por construir sistemas altamente escalables y de fácil mantenimiento.
+                      Más de 9 años de experiencia en soluciones en la nube, incluyendo colaboración con equipos 
+                      internacionales para ofrecer soluciones robustas.`,
         skill: "Habilidad Técnica",
         connect: "¿Vamos a conectarnos?",
         ds_stoneridge: `Actualmente, estoy trabajando en un nuevo proyecto centrado en construir infraestructura en AWS, habilitando la comunicación con miles de 
@@ -210,3 +218,14 @@ document.getElementById("select-idioma").addEventListener("change", function () 
     const idiomaSelecionado = this.value;
     UpdateLanguage(idiomaSelecionado); 
 });
+
+function getBrowserLang() {
+    const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
+
+    if (userLang.startsWith('pt-br') || userLang.startsWith('pt')) {
+        document.getElementById("select-idioma").value = 'pt';
+        return 'pt';
+    }
+    document.getElementById("select-idioma").value = 'en';
+    return 'en';
+}
