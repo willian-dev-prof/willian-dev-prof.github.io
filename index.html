@@ -1,105 +1,188 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Willian Alves</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style480.css'>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <script src="handler.js" defer></script>
-</head>
-<body class="body-css" onload="UpdateLanguage(getBrowserLang())">
-    <div class="transparent-div">
-        <ul class="menu-list">
-            <li class="menu-item" onclick="showDiv(1)"><i class="fas fa-home"></i> <a id="home">Início</a>
-                <div id="menu-item-1" style="position: relative;
-                    bottom: -2px;
-                    left: 0px;
-                    right: 0px;
-                    height: 2px;
-                    display: flex;
-                    background: linear-gradient(90deg, rgb(26, 202, 234), rgb(255, 0, 127));">
-                </div>
-            </li>
-            <li class="menu-item" onclick="showDiv(2)"><i class="fas fa-folder-open"></i> <a id="project">Projetos</a> 
-                <div id="menu-item-2" style="position: relative;
-                    bottom: -2px;
-                    left: 0px;
-                    right: 0px;
-                    height: 2px;
-                    display: none;
-                    background: linear-gradient(90deg, rgb(26, 202, 234), rgb(255, 0, 127));">
-                </div>
-            </li>
-            <select id="select-idioma" class="select-idioma">
-                <option value="pt">Português</option>
-                <option value="en">English</option>
-                <option value="es">Español</option>
-            </select>
-        </ul>
-    </div>
-    <div class="presentation-div" id="presentation">
-        <div class="animation">
-            <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script> 
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Willian Alves — Cloud Solutions Architect</title>
+<meta name="description" content="Willian Alves — Tech Lead Cloud e Arquiteto de Soluções AWS. Mais de 9 anos construindo sistemas em nuvem escaláveis para IoT, dados e ERPs de grande porte.">
 
-            <dotlottie-player src="https://lottie.host/f2a2cf10-3477-4618-8854-85c17425290f/nPzxh6ukPn.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
-        </div>
-        <div class="presentation-data">Willian Alves</div>
-        <div class="presentation-frase" id="description"></div>
-        <div class="presentation-ability" id="skill"></div>
-        <div class="presentation-skills">
-            <span class="skills">Python</span>
-            <span class="skills">Java</span>
-            <span class="skills">Golang</span>
-            <span class="skills">Sql/Nosql</span>
-            <span class="skills">AWS Cloud</span>
-            <span class="skills">IOT Core</span>
-            <span class="skills">Lambdas</span>
-            <span class="skills">Cloudformation / Terraform</span>
-        </div>
-        <div class="presentation-connections" id="connect"></div>
-        <div class="presentation-midias">
-            <a href="https://github.com/willian-dev-prof" target="_blank" class="midias">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/willian-alves-2ab3a6119" target="_blank" class="midias">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Willian Alves — Cloud Solutions Architect">
+<meta property="og:description" content="Tech Lead Cloud e Arquiteto de Soluções AWS. Mais de 9 anos construindo sistemas em nuvem escaláveis para IoT, dados e ERPs de grande porte.">
+<meta property="og:image" content="background.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="handler.js" defer></script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="brand"><span class="brand-bracket">&lt;</span>Willian Alves<span class="brand-bracket">/&gt;</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link" data-i18n="nav_home">Início</a>
+      <a href="#skills" class="nav-link" data-i18n="nav_skills">Skills</a>
+      <a href="#experience" class="nav-link" data-i18n="nav_experience">Experiência</a>
+      <a href="#contact" class="nav-link" data-i18n="nav_contact">Contato</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Idioma">
+        <button type="button" class="lang-btn" data-lang="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="es">ES</button>
+      </div>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
-    <div class="presentation-projects" id="projects">
-        <div class="project-stoneridge" id="stoneridge">
-            <div class="project-title">DS - STONERIDGE</div>
-            <div class="project-about" >
-                <a id="ds_stoneridge"></a>
-            </div>
-        </div>
-        <div class="project-v3" id="v3">
-            <div class="project-title">FLEET CLOUD - V3</div>
-            <div class="project-about">
-                <a id="v3_cloud"></a>  
-            </div>
-        </div>
-        <div class="project-samsung" id="samsung">
-            <div class="project-title">RCMS - SAMSUNG</div>
-            <div class="project-about">
-                <a id="rcms_samsung"></a>          
-            </div>
-        </div>
-        <div class="project-sulwork" id="sulwork">
-            <div class="project-title">ERP - SULWORK</div>
-            <div class="project-about">
-                <a id="erp_sulwork"></a>  
-            </div>
-        </div>
-        <div class="project-mv" id="mv">
-            <div class="project-title">ERP - MV</div>
-            <div class="project-about">
-                <a id="erp_mv"></a>
-            </div>
-        </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="home" class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <i class="fa-brands fa-aws hero-icon icon-1"></i>
+      <i class="fa-brands fa-python hero-icon icon-2"></i>
+      <i class="fa-brands fa-java hero-icon icon-3"></i>
+      <i class="fa-solid fa-diagram-project hero-icon icon-4"></i>
+      <i class="fa-solid fa-server hero-icon icon-5"></i>
     </div>
+
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <p class="eyebrow" data-i18n="hero_eyebrow">CLOUD SOLUTIONS ARCHITECT</p>
+        <h1>Willian Alves</h1>
+        <p class="hero-desc" data-i18n="description">Carregando...</p>
+
+        <div class="hero-cta">
+          <a href="#experience" class="btn btn-primary">
+            <span data-i18n="cta_experience">Ver experiência</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/willian-alves-cloud/" target="_blank" rel="noopener" class="btn btn-outline">
+            <i class="fab fa-linkedin"></i>
+            <span data-i18n="cta_connect">Conectar</span>
+          </a>
+        </div>
+
+        <div class="hero-social">
+          <a href="https://github.com/willian-dev-prof" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/willian-alves-cloud/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number">9+</span>
+          <span class="stat-label" data-i18n="stat_years">anos de experiência em nuvem</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">65k+</span>
+          <span class="stat-label" data-i18n="stat_devices">dispositivos IoT conectados simultaneamente</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">3.5k+</span>
+          <span class="stat-label" data-i18n="stat_trucks">veículos em produção usando a solução</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">300%</span>
+          <span class="stat-label" data-i18n="stat_perf">de ganho de performance em sistema crítico</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="skills_eyebrow">STACK TÉCNICA</p>
+      <h2 data-i18n="skills_title">Habilidades Técnicas</h2>
+
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3 data-i18n="cat_languages">Linguagens</h3>
+          <div class="tag-group">
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">C#</span>
+            <span class="tag">Golang</span>
+            <span class="tag">HTML5</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 data-i18n="cat_cloud">Cloud & Infraestrutura (AWS)</h3>
+          <div class="tag-group">
+            <span class="tag">IoT Core</span>
+            <span class="tag">Lambda</span>
+            <span class="tag">EC2</span>
+            <span class="tag">S3</span>
+            <span class="tag">DynamoDB</span>
+            <span class="tag">Aurora RDS</span>
+            <span class="tag">CloudFront</span>
+            <span class="tag">Route 53</span>
+            <span class="tag">CloudFormation</span>
+            <span class="tag">Terraform</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 data-i18n="cat_data">Dados</h3>
+          <div class="tag-group">
+            <span class="tag">SQL</span>
+            <span class="tag">NoSQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 data-i18n="cat_architecture">Arquitetura & Padrões</h3>
+          <div class="tag-group">
+            <span class="tag">CQRS</span>
+            <span class="tag">IoT em escala</span>
+            <span class="tag">Pipelines de dados</span>
+            <span class="tag">Migração de sistemas legados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="exp_eyebrow">TRAJETÓRIA</p>
+      <h2 data-i18n="nav_experience">Experiência Profissional</h2>
+
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact" class="footer">
+  <div class="container footer-inner">
+    <h2 data-i18n="connect">Vamos nos conectar?</h2>
+    <p data-i18n="footer_text">Aberto a novas oportunidades e parcerias em projetos de nuvem, arquitetura de sistemas e engenharia de dados.</p>
+
+    <div class="footer-cta">
+      <a href="https://www.linkedin.com/in/willian-alves-cloud/" target="_blank" rel="noopener" class="btn btn-primary">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/willian-dev-prof" target="_blank" rel="noopener" class="btn btn-outline">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+
+    <p class="footer-copy">© <span id="year"></span> Willian Alves</p>
+  </div>
+</footer>
+
 </body>
 </html>

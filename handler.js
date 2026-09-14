@@ -1,231 +1,328 @@
-function showDiv(dvNumber) {
-    var presentation = document.getElementById('presentation');
-    var projects = document.getElementById('projects');
-
-    var item1 = document.getElementById('menu-item-1');
-    var item2 = document.getElementById('menu-item-2');
-
-    var v3 = document.getElementById('v3');
-    var samsung = document.getElementById('samsung');
-    var mv = document.getElementById('mv');
-    var sulwork = document.getElementById('sulwork');
-    var stoneridge = document.getElementById('stoneridge');
-    
-    if (dvNumber == 1) {
-        presentation.style.display = 'block';
-        projects.style.display = 'none';
-        
-        item1.style.display = 'block';
-        item2.style.display = 'none';
-    }
-    
-    if (dvNumber == 2) {
-        presentation.style.display = 'none';
-        projects.style.display = 'block';
-
-        item1.style.display = 'none';
-        item2.style.display = 'block';
-
-        v3.style.display = 'block';
-        samsung.style.display = 'block';
-        mv.style.display = 'block';
-        sulwork.style.display = 'block';
-        stoneridge.style.display = 'block';
-    }
-}
-
 const textos = {
-    pt: {
-        home: "Início",
-        project: "Projetos",
-        about: "Sobre",
-        description: `Líder Técnico de Cloud e Arquiteto de Soluções em Nuvem especializado em AWS, 
-                      com paixão por construir sistemas altamente escaláveis e de fácil manutenção. 
-                      Mais de 9 anos de experiência em soluções em nuvem, incluindo colaboração 
-                      com equipes internacionais para entregar soluções robustas.`,
-        skill: "Habilidades Técnicas",
-        connect: "Vamos nos Conectar?",
-        ds_stoneridge: `Atualmente, estou trabalhando em um novo projeto voltado para a construção da infraestrutura na AWS, possibilitando a comunicação com milhares de equipamentos, 
-                        com destaque para os EUA e Europa.<br>
-                        As funcionalidades iniciais incluem a requisição de vídeos, captura de posicionamento e coleta de dados gerais dos dispositivos,
-                        garantindo armazenamento seguro e pós-processamento eficiente na AWS.<br>
-                        Estamos utilizando tecnologias como AWS IoT, Lambda, EC2, Aurora RDS, DynamoDB, S3, CloudFront, Route 53 e CloudFormation. Até o momento, mais de 3.500 caminhões 
-                        já utilizam nossos serviços, e em breve estaremos expandindo nossa atuação por meio de parcerias com novos clientes, que terão nosso produto, o Mirror Eyes, 
-                        já integrado diretamente na fábrica com nosso serviço em nuvem.<br>
-                        O projeto está em constante evolução, adicionando novas funcionalidades e serviços para melhorar ainda mais a experiência dos usuários e a eficiência do produto.<br>
-                        -<br>
-                        Periodo : 01/07/2024 a presente `,
-        erp_mv: `Atuei na construção e manutenção de um sistema ERP de grande porte, premiado diversas vezes como o melhor prontuário eletrônico da América Latina.
-                <br>
-                Fui líder da equipe de migração tecnológica do sistema legado do Hospital Moinhos de Vento, sendo responsável pela modernização de cinco produtos, substituindo tecnologias obsoletas como Java 6 e Flex por Java 8 e HTML5.
-                <br>
-                Gerenciei mais de 1.200 tickets de suporte e melhoria ao longo de dois anos de projeto, incluindo períodos de trabalho alocado diretamente no cliente, garantindo alta qualidade e satisfação.
-                <br>
-                Reconhecido com diversos prêmios por excelência em desenvolvimento, atendimento ao cliente e consultoria.
-                <br>
-                Participei do processo de integração entre a MV e o SUS durante o inicio da pandemia, contribuindo para a melhoria de processos críticos que impactaram positivamente a saúde pública e salvaram vidas.
-                <br>
-                -                
-                <br>Periodo : 01/09/2017 a 01/06/2021`,
-        rcms_samsung: `Fui Desafiado a otimizar a performance de um sistema de gestão para fábricas de componentes de celulares e computadores, utilizado por uma das maiores empresas do setor de tecnologia, a Samsung.
-                       <br>
-                       Conduzi melhorias significativas, reduzindo o tempo de processamento de peças em 300%, além de implementar soluções que elevaram a qualidade do código e a eficiência das requisições ao banco de dados para isso
-                       utilizei o padrão de projeto CQRS como base para o desenvolvimento, empregando a linguagem C#, o que resultou em um sistema mais escalável e robusto.
-                       <br>
-                       Essa experiência certamente ampliou meus conhecimentos em novas tecnologias, inteligência artificial (IA) e boas práticas de desenvolvimento, contribuindo para a excelência e inovação no projeto.
-                       <br>
-                       -                
-                       <br>Periodo : 01/06/2021 a 01/10/2022`,
-        v3_cloud: `Contribuí para a implementação de uma solução inovadora de inteligência artificial voltada para auxiliar condutores, monitorar o uso responsável de veículos e prevenir acidentes causados pelo consumo de álcool ou drogas.
-                       Estruturei do zero um ambiente em nuvem capaz de se comunicar com mais de 65 mil dispositivos simultaneamente, utilizando IoT como meio de comunicação principal.
-                       <br>
-                       Desenvolvi pipelines para o processamento de dados, empregando AWS S3 para armazenamento e AWS Lambda junto com EC2 para o processamento de imagens e vídeos.
-                       <br>
-                       Principais funcionalidades implementadas: reconhecimento facial para monitoramento de condutores e configuração remota de dispositivos via IoT.
-                       <br>
-                       O projeto teve impacto significativo na prevenção de acidentes e na promoção da segurança no trânsito, contribuindo para a inovação no setor de transporte e tecnologia.
-                       <br>
-                       -                
-                       <br>Periodo : 01/10/2022 a 01/07/2024`,
-        erp_sulwork: `Eu fundei uma empresa durante a pandemia para oferecer suporte a hospitais, criando novos serviços que os conectassem ao SUS (Sistema Único de Saúde).
-                Resolvi diversos desafios relacionados a servidores, atualizando e modernizando tanto o software quanto o hardware de vários hospitais. Além disso, 
-                liderei a migração de sistemas do Flex e Oracle Forms para tecnologias modernas como Java 11 e HTML5, melhorando significativamente a 
-                qualidade do código, o desempenho do sistema e a experiência do usuário.
-                <br>
-                -                
-                <br>Periodo : 01/06/2021 a 13/09/2023`
-    },
-    en: {
-        home: "Home",
-        project: "Projects",
-        about: "About",
-        description: `Tech Lead Cloud and Cloud Solution Architect specializing in AWS with a passion for building
-                      highly scalable and maintainable systems. Over 9 years of experience in cloud solutions, including
-                      collaboration with international teams to deliver robust solutions.`,
-        skill: "Technical Skill",
-        connect: "Let's connect?",
-        ds_stoneridge: `Currently, I am working on a new project focused on building infrastructure on AWS, enabling communication with thousands of devices, 
-                     particularly in the USA and Europe. The initial features include video requests, positioning capture, and collection of general device data, 
-                     ensuring secure storage and efficient post-processing on AWS.<br>
-                     We are using technologies such as AWS IoT, Lambda, EC2, Aurora RDS, DynamoDB, S3, CloudFront, Route 53, and CloudFormation.<br>
-                     So far, over 3,500 trucks are already using our services, and we will soon be expanding our reach through partnerships with new clients, 
-                     who will have our product, Mirror Eyes, integrated directly into the factory with our cloud service.<br>
-                     The project is continuously evolving, adding new features and services to further improve the user experience and product efficiency.<br>
-                     -<br>
-                     Period: 07/01/2024 to present`,
-        erp_mv: `I worked on the construction and maintenance of a large-scale ERP system, which has been awarded multiple times as the best electronic health record system in Latin America.
-                <br> I was the leader of the technological migration team for the legacy system of Hospital Moinhos de Vento, responsible for modernizing five products, replacing obsolete technologies such as Java 6 and Flex with Java 8 and HTML5.
-                <br> I managed over 1,200 support and improvement tickets over two years of the project, including periods of direct work allocated to the client, ensuring high quality and satisfaction.
-                <br> Recognized with several awards for excellence in development, customer service, and consulting.
-                <br> I participated in the integration process between MV and SUS during the early stages of the pandemic, contributing to the improvement of critical processes that positively impacted public health and saved lives.
-                <br>-
-                <br> Period: 09/01/2017 to 06/01/2021`,
-        rcms_samsung: `I was challenged to optimize the performance of a management system for factories producing mobile phone and computer components, used by one of the largest 
-                        companies in the technology sector, Samsung.
-                        <br> I led significant improvements, reducing the processing time of parts by 300%, in addition to implementing solutions that enhanced 
-                        code quality and database query efficiency. To achieve this, I used the CQRS design pattern as the foundation for development, employing 
-                        C# language, resulting in a more scalable and robust system.
-                        <br> This experience certainly broadened my knowledge of new technologies, artificial intelligence (AI), and best development practices, contributing to excellence and innovation in the project.
-                        <br>
-                        -
-                        <br> Period: 06/01/2021 to 10/01/2022`,
-        v3_cloud: `I contributed to the implementation of an innovative artificial intelligence solution aimed at assisting drivers, monitoring the responsible use of vehicles, and preventing accidents caused by alcohol or drug consumption.
-                    I structured from scratch a cloud environment capable of communicating with over 65,000 devices simultaneously, using IoT as the main communication method.
-                    <br> I developed pipelines for data processing, employing AWS S3 for storage and AWS Lambda together with EC2 for image and video processing.
-                    <br> Key features implemented: facial recognition for driver monitoring and remote configuration of devices via IoT.
-                    <br> The project had a significant impact on accident prevention and promoting road safety, contributing to innovation in the transportation and technology sectors.
-                    <br>
-                    -
-                    <br> Period: 10/01/2022 to 07/01/2024`,
-        erp_sulwork: `I founded a company during the pandemic to offer support to hospitals by creating new services that connected them to the SUS (Unified Health System).
-                        I solved several challenges related to servers, updating and modernizing both the software and hardware of various hospitals. Additionally,
-                        I led the migration of systems from Flex and Oracle Forms to modern technologies like Java 11 and HTML5, significantly improving the code quality, system performance, and user experience.
-                        <br>
-                        -
-                        <br> Period: 06/01/2021 to 09/13/2023`
-    },
-    es: {
-        home: "Inicio",
-        project: "Proyectos",
-        about: "Quién soy",
-        description: `Tech Lead de Cloud y Arquitecto de Soluciones en la Nube especializado en AWS, 
-                      con pasión por construir sistemas altamente escalables y de fácil mantenimiento.
-                      Más de 9 años de experiencia en soluciones en la nube, incluyendo colaboración con equipos 
-                      internacionales para ofrecer soluciones robustas.`,
-        skill: "Habilidad Técnica",
-        connect: "¿Vamos a conectarnos?",
-        ds_stoneridge: `Actualmente, estoy trabajando en un nuevo proyecto centrado en construir infraestructura en AWS, habilitando la comunicación con miles de 
-                        dispositivos, particularmente en USA y Europa.<br> 
-                        Las características iniciales incluyen solicitudes de videos, captura de posicionamiento y 
-                        recopilación de datos generales de los dispositivos, garantizando un almacenamiento seguro y un postprocesamiento eficiente en AWS.
-                        Estamos utilizando tecnologías como AWS IoT, Lambda, EC2, Aurora RDS, DynamoDB, S3, CloudFront, Route 53 y CloudFormation.<br>
-                        Hasta ahora, más de 3,500 camiones ya están utilizando nuestros servicios, y pronto estaremos expandiendo nuestro alcance mediante 
-                        asociaciones con nuevos clientes, quienes tendrán nuestro producto, Mirror Eyes, integrado directamente en la fábrica con nuestro servicio 
-                        en la nube.<br>
-                        El proyecto está en constante evolución, añadiendo nuevas características y servicios para mejorar aún más la experiencia del usuario y la 
-                        eficiencia del producto.<br>
-                        -<br>
-                        Período: 01/07/2024 hasta el presente`,
-        erp_mv: `Trabajé en la construcción y mantenimiento de un sistema ERP de gran escala, que ha sido galardonado en varias ocasiones como el mejor sistema de registro electrónico de salud en América Latina.
-                <br> Fui líder del equipo de migración tecnológica del sistema legado del Hospital Moinhos de Vento, siendo responsable de la modernización de cinco productos, sustituyendo tecnologías obsoletas como Java 6 y Flex por Java 8 y HTML5.
-                <br> Gestioné más de 1.200 tickets de soporte y mejora durante dos años del proyecto, incluidos períodos de trabajo directamente asignado al cliente, garantizando alta calidad y satisfacción.
-                <br> Reconocido con varios premios por excelencia en desarrollo, atención al cliente y consultoría.
-                <br> Participé en el proceso de integración entre MV y el SUS durante las primeras etapas de la pandemia, contribuyendo a la mejora de procesos críticos que impactaron positivamente la salud pública y salvaron vidas.
-                <br>-
-                <br> Período: 01/09/2017 a 01/06/2021`,
-        rcms_samsung: `Fui desafiado a optimizar el rendimiento de un sistema de gestión para fábricas de componentes de teléfonos móviles y computadoras, utilizado por una de 
-                        las empresas más grandes del sector tecnológico, Samsung.
-                        <br> Lideré mejoras significativas, reduciendo el tiempo de procesamiento de piezas en un 300%, además de implementar soluciones que elevaron la calidad 
-                        del código y la eficiencia de las consultas a la base de datos. Para ello, utilicé el patrón de diseño CQRS como base para el desarrollo, empleando el 
-                        lenguaje C#, lo que resultó en un sistema más escalable y robusto.
-                        <br> Esta experiencia sin duda amplió mis conocimientos en nuevas tecnologías, inteligencia artificial (IA) y buenas prácticas de desarrollo, 
-                        contribuyendo a la excelencia e innovación en el proyecto.
-                        <br>
-                        -
-                        <br> Período: 01/06/2021 a 01/10/2022`,
-        v3_cloud: `Contribuí a la implementación de una solución innovadora de inteligencia artificial orientada a ayudar a los conductores, monitorear el uso responsable de los vehículos y prevenir accidentes causados por el consumo de alcohol o drogas.
-                    Estructuré desde cero un entorno en la nube capaz de comunicarse con más de 65,000 dispositivos simultáneamente, utilizando IoT como medio de comunicación principal.
-                    <br> Desarrollé pipelines para el procesamiento de datos, utilizando AWS S3 para el almacenamiento y AWS Lambda junto con EC2 para el procesamiento de imágenes y videos.
-                    <br> Principales funcionalidades implementadas: reconocimiento facial para monitoreo de conductores y configuración remota de dispositivos a través de IoT.
-                    <br> El proyecto tuvo un impacto significativo en la prevención de accidentes y en la promoción de la seguridad vial, contribuyendo a la innovación en los sectores de transporte y tecnología.
-                    <br>
-                    -
-                    <br> Período: 01/10/2022 a 01/07/2024`,
-        erp_sulwork: `Fundé una empresa durante la pandemia para ofrecer soporte a hospitales, creando nuevos servicios que los conectaran al SUS (Sistema Único de Salud).
-                        Resolvía diversos desafíos relacionados con servidores, actualizando y modernizando tanto el software como el hardware de varios hospitales. Además,
-                        lideré la migración de sistemas de Flex y Oracle Forms a tecnologías modernas como Java 11 y HTML5, mejorando significativamente la calidad del código, el rendimiento del sistema y la experiencia del usuario.
-                        <br>
-                        -
-                        <br> Período: 01/06/2021 a 13/09/2023`
-        
-    }
+  pt: {
+    nav_home: "Início",
+    nav_skills: "Skills",
+    nav_experience: "Experiência",
+    nav_contact: "Contato",
+    hero_eyebrow: "TECH LEAD CLOUD & ARQUITETO DE SOLUÇÕES AWS",
+    description: `Líder Técnico de Cloud e Arquiteto de Soluções em Nuvem especializado em AWS, com paixão por construir sistemas altamente escaláveis e de fácil manutenção. Mais de 9 anos de experiência em soluções em nuvem, incluindo colaboração com equipes internacionais para entregar soluções robustas.`,
+    cta_experience: "Ver experiência",
+    cta_connect: "Conectar",
+    stat_years: "anos de experiência em nuvem",
+    stat_devices: "dispositivos IoT conectados simultaneamente",
+    stat_trucks: "veículos em produção usando a solução",
+    stat_perf: "de ganho de performance em sistema crítico",
+    skills_eyebrow: "STACK TÉCNICA",
+    skills_title: "Habilidades Técnicas",
+    cat_languages: "Linguagens",
+    cat_cloud: "Cloud & Infraestrutura (AWS)",
+    cat_data: "Dados",
+    cat_architecture: "Arquitetura & Padrões",
+    exp_eyebrow: "TRAJETÓRIA",
+    connect: "Vamos nos conectar?",
+    footer_text: "Aberto a novas oportunidades e parcerias em projetos de nuvem, arquitetura de sistemas e engenharia de dados.",
+    experience: [
+      {
+        title: "DS — Stoneridge",
+        period: "jul/2024 — atual",
+        points: [
+          "Construção da infraestrutura AWS para comunicação com milhares de equipamentos, com destaque para EUA e Europa.",
+          "Funcionalidades de requisição de vídeos, captura de posicionamento e coleta de dados gerais dos dispositivos, com armazenamento seguro e pós-processamento eficiente.",
+          "Mais de 3.500 caminhões já utilizam os serviços, com expansão prevista via parcerias que integrarão o produto Mirror Eyes direto na fábrica."
+        ],
+        tags: ["AWS IoT", "Lambda", "EC2", "Aurora RDS", "DynamoDB", "S3", "CloudFront", "Route 53", "CloudFormation"]
+      },
+      {
+        title: "Fleet Cloud — V3",
+        period: "out/2022 — jul/2024",
+        points: [
+          "Solução de inteligência artificial para monitorar o uso responsável de veículos e prevenir acidentes por álcool ou drogas.",
+          "Estruturação do zero de um ambiente cloud com comunicação simultânea com mais de 65.000 dispositivos via IoT.",
+          "Pipelines de processamento de dados com AWS S3, Lambda e EC2 para imagens e vídeos.",
+          "Reconhecimento facial para monitoramento de condutores e configuração remota de dispositivos via IoT."
+        ],
+        tags: ["AWS IoT", "Lambda", "EC2", "S3", "Reconhecimento facial"]
+      },
+      {
+        title: "RCMS — Samsung",
+        period: "jun/2021 — out/2022",
+        points: [
+          "Otimização de performance de sistema de gestão para fábricas de componentes de celulares e computadores da Samsung.",
+          "Redução de 300% no tempo de processamento de peças utilizando o padrão CQRS em C#.",
+          "Elevação da qualidade de código e da eficiência das requisições ao banco de dados."
+        ],
+        tags: ["C#", "CQRS", "SQL"]
+      },
+      {
+        title: "ERP — Sulwork",
+        period: "jun/2021 — set/2023",
+        points: [
+          "Fundação de empresa durante a pandemia para conectar hospitais ao SUS (Sistema Único de Saúde).",
+          "Modernização de servidores, software e hardware de diversos hospitais.",
+          "Liderança da migração de sistemas Flex e Oracle Forms para Java 11 e HTML5."
+        ],
+        tags: ["Java 11", "HTML5", "Oracle"]
+      },
+      {
+        title: "ERP — MV",
+        period: "set/2017 — jun/2021",
+        points: [
+          "Construção e manutenção de ERP de grande porte, premiado diversas vezes como o melhor prontuário eletrônico da América Latina.",
+          "Liderança da migração tecnológica do sistema legado do Hospital Moinhos de Vento, modernizando cinco produtos (Java 6 / Flex → Java 8 / HTML5).",
+          "Gestão de mais de 1.200 tickets de suporte e melhoria em dois anos de projeto, incluindo períodos alocado diretamente no cliente.",
+          "Participação na integração entre a MV e o SUS no início da pandemia, contribuindo com processos críticos de saúde pública."
+        ],
+        tags: ["Java 8", "Java 6", "Flex", "HTML5"]
+      }
+    ]
+  },
+  en: {
+    nav_home: "Home",
+    nav_skills: "Skills",
+    nav_experience: "Experience",
+    nav_contact: "Contact",
+    hero_eyebrow: "TECH LEAD CLOUD & AWS SOLUTIONS ARCHITECT",
+    description: `Tech Lead Cloud and Cloud Solution Architect specializing in AWS, with a passion for building highly scalable and maintainable systems. Over 9 years of experience in cloud solutions, including collaboration with international teams to deliver robust solutions.`,
+    cta_experience: "View experience",
+    cta_connect: "Connect",
+    stat_years: "years of cloud experience",
+    stat_devices: "IoT devices connected simultaneously",
+    stat_trucks: "vehicles in production using the solution",
+    stat_perf: "performance gain on a critical system",
+    skills_eyebrow: "TECH STACK",
+    skills_title: "Technical Skills",
+    cat_languages: "Languages",
+    cat_cloud: "Cloud & Infrastructure (AWS)",
+    cat_data: "Data",
+    cat_architecture: "Architecture & Patterns",
+    exp_eyebrow: "CAREER PATH",
+    connect: "Let's connect?",
+    footer_text: "Open to new opportunities and partnerships in cloud projects, systems architecture, and data engineering.",
+    experience: [
+      {
+        title: "DS — Stoneridge",
+        period: "Jul/2024 — present",
+        points: [
+          "Building AWS infrastructure enabling communication with thousands of devices, particularly in the USA and Europe.",
+          "Video request, positioning capture, and general device data collection features, ensuring secure storage and efficient post-processing.",
+          "Over 3,500 trucks already using the services, with expansion planned through partnerships integrating the Mirror Eyes product directly into the factory."
+        ],
+        tags: ["AWS IoT", "Lambda", "EC2", "Aurora RDS", "DynamoDB", "S3", "CloudFront", "Route 53", "CloudFormation"]
+      },
+      {
+        title: "Fleet Cloud — V3",
+        period: "Oct/2022 — Jul/2024",
+        points: [
+          "AI solution to help monitor responsible vehicle use and prevent accidents caused by alcohol or drug consumption.",
+          "Structured a cloud environment from scratch capable of communicating with over 65,000 devices simultaneously via IoT.",
+          "Built data processing pipelines using AWS S3, Lambda, and EC2 for image and video processing.",
+          "Key features: facial recognition for driver monitoring and remote device configuration via IoT."
+        ],
+        tags: ["AWS IoT", "Lambda", "EC2", "S3", "Facial recognition"]
+      },
+      {
+        title: "RCMS — Samsung",
+        period: "Jun/2021 — Oct/2022",
+        points: [
+          "Optimized performance of a management system for mobile phone and computer component factories at Samsung.",
+          "Led improvements reducing part processing time by 300%, using the CQRS pattern in C#.",
+          "Improved code quality and database query efficiency."
+        ],
+        tags: ["C#", "CQRS", "SQL"]
+      },
+      {
+        title: "ERP — Sulwork",
+        period: "Jun/2021 — Sep/2023",
+        points: [
+          "Founded a company during the pandemic to connect hospitals to SUS (Brazil's Unified Health System).",
+          "Modernized servers, software, and hardware across several hospitals.",
+          "Led the migration of Flex and Oracle Forms systems to Java 11 and HTML5."
+        ],
+        tags: ["Java 11", "HTML5", "Oracle"]
+      },
+      {
+        title: "ERP — MV",
+        period: "Sep/2017 — Jun/2021",
+        points: [
+          "Built and maintained a large-scale ERP system, awarded multiple times as the best electronic health record system in Latin America.",
+          "Led the technology migration of Hospital Moinhos de Vento's legacy system, modernizing five products (Java 6 / Flex → Java 8 / HTML5).",
+          "Managed over 1,200 support and improvement tickets over two years, including periods working directly on-site with the client.",
+          "Took part in the MV–SUS integration during the early pandemic, contributing to critical public health processes."
+        ],
+        tags: ["Java 8", "Java 6", "Flex", "HTML5"]
+      }
+    ]
+  },
+  es: {
+    nav_home: "Inicio",
+    nav_skills: "Skills",
+    nav_experience: "Experiencia",
+    nav_contact: "Contacto",
+    hero_eyebrow: "TECH LEAD CLOUD & ARQUITECTO DE SOLUCIONES AWS",
+    description: `Tech Lead de Cloud y Arquitecto de Soluciones en la Nube especializado en AWS, con pasión por construir sistemas altamente escalables y de fácil mantenimiento. Más de 9 años de experiencia en soluciones en la nube, incluyendo colaboración con equipos internacionales para ofrecer soluciones robustas.`,
+    cta_experience: "Ver experiencia",
+    cta_connect: "Conectar",
+    stat_years: "años de experiencia en la nube",
+    stat_devices: "dispositivos IoT conectados simultáneamente",
+    stat_trucks: "vehículos en producción usando la solución",
+    stat_perf: "de mejora de rendimiento en sistema crítico",
+    skills_eyebrow: "STACK TÉCNICA",
+    skills_title: "Habilidades Técnicas",
+    cat_languages: "Lenguajes",
+    cat_cloud: "Cloud & Infraestructura (AWS)",
+    cat_data: "Datos",
+    cat_architecture: "Arquitectura & Patrones",
+    exp_eyebrow: "TRAYECTORIA",
+    connect: "¿Vamos a conectarnos?",
+    footer_text: "Abierto a nuevas oportunidades y colaboraciones en proyectos de nube, arquitectura de sistemas e ingeniería de datos.",
+    experience: [
+      {
+        title: "DS — Stoneridge",
+        period: "jul/2024 — presente",
+        points: [
+          "Construcción de infraestructura AWS para la comunicación con miles de dispositivos, particularmente en EE. UU. y Europa.",
+          "Funcionalidades de solicitud de videos, captura de posicionamiento y recopilación de datos generales, garantizando almacenamiento seguro y postprocesamiento eficiente.",
+          "Más de 3.500 camiones ya utilizan los servicios, con expansión prevista mediante alianzas que integrarán el producto Mirror Eyes directamente en la fábrica."
+        ],
+        tags: ["AWS IoT", "Lambda", "EC2", "Aurora RDS", "DynamoDB", "S3", "CloudFront", "Route 53", "CloudFormation"]
+      },
+      {
+        title: "Fleet Cloud — V3",
+        period: "oct/2022 — jul/2024",
+        points: [
+          "Solución de inteligencia artificial para monitorear el uso responsable de vehículos y prevenir accidentes por alcohol o drogas.",
+          "Estructuración desde cero de un entorno cloud capaz de comunicarse con más de 65.000 dispositivos simultáneamente vía IoT.",
+          "Pipelines de procesamiento de datos con AWS S3, Lambda y EC2 para imágenes y videos.",
+          "Reconocimiento facial para monitoreo de conductores y configuración remota de dispositivos vía IoT."
+        ],
+        tags: ["AWS IoT", "Lambda", "EC2", "S3", "Reconocimiento facial"]
+      },
+      {
+        title: "RCMS — Samsung",
+        period: "jun/2021 — oct/2022",
+        points: [
+          "Optimización del rendimiento de un sistema de gestión para fábricas de componentes de celulares y computadoras de Samsung.",
+          "Reducción del 300% en el tiempo de procesamiento de piezas utilizando el patrón CQRS en C#.",
+          "Mejora de la calidad del código y de la eficiencia de las consultas a la base de datos."
+        ],
+        tags: ["C#", "CQRS", "SQL"]
+      },
+      {
+        title: "ERP — Sulwork",
+        period: "jun/2021 — sep/2023",
+        points: [
+          "Fundación de una empresa durante la pandemia para conectar hospitales al SUS (Sistema Único de Salud de Brasil).",
+          "Modernización de servidores, software y hardware en varios hospitales.",
+          "Liderazgo de la migración de sistemas Flex y Oracle Forms a Java 11 y HTML5."
+        ],
+        tags: ["Java 11", "HTML5", "Oracle"]
+      },
+      {
+        title: "ERP — MV",
+        period: "sep/2017 — jun/2021",
+        points: [
+          "Construcción y mantenimiento de un ERP de gran escala, premiado varias veces como el mejor sistema de registro electrónico de salud de América Latina.",
+          "Liderazgo de la migración tecnológica del sistema legado del Hospital Moinhos de Vento, modernizando cinco productos (Java 6 / Flex → Java 8 / HTML5).",
+          "Gestión de más de 1.200 tickets de soporte y mejora durante dos años de proyecto, incluidos períodos asignado directamente al cliente.",
+          "Participación en la integración entre MV y el SUS al inicio de la pandemia, contribuyendo a procesos críticos de salud pública."
+        ],
+        tags: ["Java 8", "Java 6", "Flex", "HTML5"]
+      }
+    ]
+  }
 };
 
+function renderTimeline(idioma) {
+  const timeline = document.getElementById("timeline");
+  if (!timeline) return;
+
+  timeline.innerHTML = textos[idioma].experience.map(item => `
+    <div class="timeline-item">
+      <div class="timeline-card">
+        <div class="timeline-head">
+          <span class="timeline-title">${item.title}</span>
+          <span class="timeline-period">${item.period}</span>
+        </div>
+        <ul class="timeline-points">
+          ${item.points.map(p => `<li>${p}</li>`).join("")}
+        </ul>
+        <div class="timeline-tags">
+          ${item.tags.map(t => `<span class="tag">${t}</span>`).join("")}
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
 function UpdateLanguage(idioma) {
-    document.getElementById("home").textContent = textos[idioma].home;
-    document.getElementById("project").textContent = textos[idioma].project;
-    document.getElementById("description").textContent = textos[idioma].description;
-    document.getElementById("skill").textContent = textos[idioma].skill;
-    document.getElementById("connect").textContent = textos[idioma].connect;
-    document.getElementById("ds_stoneridge").innerHTML = textos[idioma].ds_stoneridge;
-    document.getElementById("erp_mv").innerHTML = textos[idioma].erp_mv;
-    document.getElementById("rcms_samsung").innerHTML = textos[idioma].rcms_samsung;
-    document.getElementById("v3_cloud").innerHTML = textos[idioma].v3_cloud;
-    document.getElementById("erp_sulwork").innerHTML = textos[idioma].erp_sulwork;
-}
+  if (!textos[idioma]) idioma = "en";
 
-document.getElementById("select-idioma").addEventListener("change", function () {
-    const idiomaSelecionado = this.value;
-    UpdateLanguage(idiomaSelecionado); 
-});
+  document.documentElement.lang = idioma;
 
-function getBrowserLang() {
-    const userLang = (navigator.language || navigator.userLanguage).toLowerCase();
-
-    if (userLang.startsWith('pt-br') || userLang.startsWith('pt')) {
-        document.getElementById("select-idioma").value = 'pt';
-        return 'pt';
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (textos[idioma][key] !== undefined) {
+      el.textContent = textos[idioma][key];
     }
-    document.getElementById("select-idioma").value = 'en';
-    return 'en';
+  });
+
+  renderTimeline(idioma);
+
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.lang === idioma);
+  });
+
+  localStorage.setItem("lang", idioma);
 }
+
+function getInitialLang() {
+  const saved = localStorage.getItem("lang");
+  if (saved && textos[saved]) return saved;
+
+  const userLang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+  if (userLang.startsWith("pt")) return "pt";
+  if (userLang.startsWith("es")) return "es";
+  return "en";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  UpdateLanguage(getInitialLang());
+
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", () => UpdateLanguage(btn.dataset.lang));
+  });
+
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen);
+    });
+    navLinks.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  const sections = document.querySelectorAll("main section, footer#contact");
+  const navAnchors = document.querySelectorAll(".nav-link");
+  if (sections.length && navAnchors.length) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navAnchors.forEach(a => {
+            a.classList.toggle("active", a.getAttribute("href") === `#${entry.target.id}`);
+          });
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+
+    sections.forEach(section => observer.observe(section));
+  }
+});
