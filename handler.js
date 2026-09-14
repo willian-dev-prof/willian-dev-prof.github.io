@@ -23,7 +23,7 @@ const textos = {
     footer_text: "Aberto a novas oportunidades e parcerias em projetos de nuvem, arquitetura de sistemas e engenharia de dados.",
     experience: [
       {
-        title: "DS — Stoneridge",
+        title: "FleetArc Cloud Solution — Stoneridge",
         period: "jul/2024 — atual",
         points: [
           "Construção da infraestrutura AWS para comunicação com milhares de equipamentos, com destaque para EUA e Europa.",
@@ -100,7 +100,7 @@ const textos = {
     footer_text: "Open to new opportunities and partnerships in cloud projects, systems architecture, and data engineering.",
     experience: [
       {
-        title: "DS — Stoneridge",
+        title: "FleetArc Cloud Solution — Stoneridge",
         period: "Jul/2024 — present",
         points: [
           "Building AWS infrastructure enabling communication with thousands of devices, particularly in the USA and Europe.",
@@ -177,7 +177,7 @@ const textos = {
     footer_text: "Abierto a nuevas oportunidades y colaboraciones en proyectos de nube, arquitectura de sistemas e ingeniería de datos.",
     experience: [
       {
-        title: "DS — Stoneridge",
+        title: "FleetArc Cloud Solution — Stoneridge",
         period: "jul/2024 — presente",
         points: [
           "Construcción de infraestructura AWS para la comunicación con miles de dispositivos, particularmente en EE. UU. y Europa.",
